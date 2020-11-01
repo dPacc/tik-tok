@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./Video.css";
 import myVideo from "../../utils/videos/tiktokvideo_1604132845.mp4";
+import VideoFooter from "../videoFooter/VideoFooter";
 
 export default function Video() {
   const [playing, setPlaying] = useState(false);
@@ -30,6 +31,8 @@ export default function Video() {
       ></video>
 
       {/* Video Footer */}
+      <VideoFooter />
+
       {/* Video Sidebar */}
     </div>
   );

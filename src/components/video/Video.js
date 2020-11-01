@@ -1,9 +1,17 @@
 import React, { useRef, useState } from "react";
 import "./Video.css";
-import myVideo from "../../utils/videos/tiktokvideo_1604132845.mp4";
 import VideoFooter from "../videoFooter/VideoFooter";
+import VideoSidebar from "../videoSidebar/VideoSidebar";
 
-export default function Video() {
+export default function Video({
+  url,
+  channel,
+  description,
+  song,
+  likes,
+  shares,
+  comments,
+}) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
 
@@ -27,13 +35,12 @@ export default function Video() {
         loop
         ref={videoRef}
         className="video__player"
-        src={myVideo}
+        src={url}
       ></video>
 
-      {/* Video Footer */}
-      <VideoFooter />
+      <VideoFooter channel={channel} description={description} song={song} />
 
-      {/* Video Sidebar */}
+      <VideoSidebar likes={likes} shares={shares} comments={comments} />
     </div>
   );
 }
